@@ -123,6 +123,11 @@ export default class ModalPicker extends BaseComponent {
     }
 
     renderOptionList() {
+        if(!(this.props.data && this.props.data.length > 0)){
+          return (
+            <View></View>
+          )
+        }
         var options = this.props.data.map((item) => {
             if (item.section) {
                 return this.renderSection(item, this.state.labelName);
